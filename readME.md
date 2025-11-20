@@ -4,7 +4,7 @@ A full-stack MERN platform connecting university students with local vendors for
 
 **🚀 Live Demo:** [neurafund.vercel.app](https://neurafund.vercel.app)  
 **📚 API Docs:** [api.neurafund.com/api](https://api.neurafund.com/api)  
-**🎥 Demo Videos:** [View Playlist](https://youtube.com/playlist?list=PLxxx)  
+**🎥 Demo Videos:** [View Playlist](https://youtube.com/playlist?list=PLxxx)  - to be created soon !!
 **📸 Screenshots:** [View Gallery](./screenshots/README.md)
 
 ---
@@ -37,90 +37,92 @@ NeuraFund is a campus-based gig economy platform that empowers students to earn 
 ### Student Experience
 
 #### Dashboard & Task Browsing
-```
+
 [Screenshot: Student Dashboard]
+![Student Dashboard](screenshots/student/dashboard.png)
 - Available tasks list with filters
 - Task cards showing reward, time, location
 - Real-time wallet balance display
 - Search and filter functionality
-📍 Path to add: /screenshots/student-dashboard.png
-```
+📍 Path to add: /screenshots/student/dashboard.png
 
 #### Task Details & Claim
-```
+
 [Screenshot: Task Details Page]
+![Task Details](screenshots/student/task-details.png)
 - Full task description
 - Pickup and dropoff locations with map
 - Vendor rating and profile
 - "Claim Task" button
 📍 Path to add: /screenshots/task-details.png
-```
 
 #### Live Task Tracking
-```
+
 [Screenshot: Live Tracking View]
+![Live Tracking View](screenshots/features/live-map.png)
 - Real-time chat with vendor
 - Live map showing student location
 - Task status indicator
 - File upload for proof
 📍 Path to add: /screenshots/live-tracking.png
-```
 
 #### Real-Time Chat
-```
+
 [Screenshot: Chat Interface]
-- Message history with timestamps
+![Chat Interface](screenshots/student/student-chat.png)
+- Real time communication between student and vendor
 - Profile pictures/avatars
 - Vendor/student identification
 - Notification sound indicator
 📍 Path to add: /screenshots/student-chat.png
-```
 
 #### Proof Upload
-```
+
 [Screenshot: Proof Upload Modal]
+![Proof Upload Modal](screenshots/student/proof-upload.png)
 - File input for photos/documents
 - File preview with size
 - Upload progress indicator
 - Submit button
 📍 Path to add: /screenshots/proof-upload.png
-```
 
 #### Wallet Management
-```
+
 [Screenshot: Wallet Dashboard]
+![Wallet Dashboard](screenshots/features/mpesa-deposit.png)
+![ Wallet Dashboard](screenshots/features/wallet-student.png)
 - Current balance display (KES)
 - Withdraw to M-Pesa form
 - Transaction history table
 - Filter by transaction type
 📍 Path to add: /screenshots/wallet-student.png
-```
 
 #### Rating System
-```
+
 [Screenshot: Rate Vendor Modal]
+![Rate Vendor Modal](screenshots/student/rating-modal.png)
 - Star rating selector (1-5)
 - Comment text area
 - Submit button
 - Vendor profile preview
 📍 Path to add: /screenshots/rating-modal.png
-```
 
 ### Vendor Experience
 
 #### Dashboard & Task Management
-```
+
 [Screenshot: Vendor Dashboard]
+![Vendor Dashboard](screenshots/vendor/dashboard.png)
 - Created tasks overview
 - Task status breakdown (available/in-progress/pending/completed)
 - Wallet balance with deposit option
 - Quick actions (Create Task, View Tasks)
 📍 Path to add: /screenshots/vendor-dashboard.png
-```
 
 #### Create Task Form
-```
+
 [Screenshot: Create Task Modal]
+![Create Task Modal](screenshots/vendor/create-task.png)
 - Description text area
 - Pickup location input
 - Dropoff location input
@@ -128,57 +130,57 @@ NeuraFund is a campus-based gig economy platform that empowers students to earn 
 - Reward amount input
 - Create button with validation
 📍 Path to add: /screenshots/create-task.png
-```
 
 #### Live Task Monitoring
-```
+
 [Screenshot: Vendor Live View]
+![Vendor Live View](screenshots/vendor/vendor-live-view.png)
 - Student location on interactive map
 - Real-time position updates
 - Live chat interface
 - Task progress indicator
 - Student profile card
 📍 Path to add: /screenshots/vendor-live-view.png
-```
 
 #### Proof Review
-```
+
 [Screenshot: Proof Review Page]
+![Proof Review Page](screenshots/vendor/proof-review.png)
 - Task summary panel
 - Proof image gallery (carousel)
 - Approve/Reject buttons
 - Review notes text area
 - Payment confirmation
 📍 Path to add: /screenshots/proof-review.png
-```
 
 #### M-Pesa Deposit
-```
+
 [Screenshot: M-Pesa Deposit Form]
+![M-Pesa Deposit Form](screenshots/vendor/mpesa-deposit.png)
 - Amount input field
 - Phone number input (254...)
 - Deposit button
 - STK Push confirmation message
 - Transaction details
 📍 Path to add: /screenshots/mpesa-deposit.png
-```
 
 #### Task History & Analytics
-```
+
 [Screenshot: Task History]
+![Task History](screenshots/vendor/task-history.png)
 - Completed tasks list
 - Total earnings by task
 - Date/time completed
 - Student names and ratings
 - Revenue summary
 📍 Path to add: /screenshots/task-history.png
-```
 
 ### Authentication Pages
 
 #### Student Registration
-```
+
 [Screenshot: Student Register]
+![Student Register](screenshots/auth/register-student.png)
 - Email input (university domain)
 - Password fields
 - First/Last name
@@ -187,11 +189,11 @@ NeuraFund is a campus-based gig economy platform that empowers students to earn 
 - Profile picture upload
 - Register button
 📍 Path to add: /screenshots/register-student.png
-```
 
 #### Vendor Registration
-```
+
 [Screenshot: Vendor Register]
+![Vendor Register](screenshots/auth/register-vendor.png)
 - Email input
 - Password fields
 - First/Last name
@@ -201,69 +203,69 @@ NeuraFund is a campus-based gig economy platform that empowers students to earn 
 - Profile picture upload
 - Register button
 📍 Path to add: /screenshots/register-vendor.png
-```
 
 #### Login Page
-```
+
 [Screenshot: Login]
+![Login](screenshots/auth/login.png)
 - Email input
 - Password input
 - Login button
 - Register links (Student/Vendor)
 - Password recovery link
 📍 Path to add: /screenshots/login.png
-```
 
 ### System Features
 
 #### Real-Time Notifications
-```
+
 [Screenshot: Toast Notifications]
+![Toast Notifications](screenshots/features/notifications.png)
 - Success message (green toast)
 - Error message (red toast)
 - Info message (blue toast)
 - Auto-dismiss after 3 seconds
 - Close button
 📍 Path to add: /screenshots/notifications.png
-```
 
 #### Location Tracking Map
-```
+
 [Screenshot: Leaflet Map Integration]
+![Leaflet Map Integration](screenshots/features/live-map.png)
 - OpenStreetMap tiles
 - Marker for current location
 - Address display
 - Zoom controls
 - Geolocation updates every 5 seconds
 📍 Path to add: /screenshots/live-map.png
-```
 
 #### Responsive Design
-```
+
 [Screenshot: Mobile View]
+![Mobile View](screenshots/features/mobile-dashboard.png)
 - Sidebar navigation collapses
 - Cards stack vertically
 - Touch-friendly buttons
 - Optimized for 375px screens
 📍 Path to add: /screenshots/mobile-dashboard.png
-```
 
 ### Navigation & UI
 
 #### Navbar
-```
+
 [Screenshot: Navigation Bar]
+![Navigation Bar](screenshots/features/navbar.png)
 - NeuraFund logo (clickable home)
 - Navigation links (Dashboard, Wallet)
 - User name display
 - Role indicator (Student/Vendor)
 - Logout button
 📍 Path to add: /screenshots/navbar.png
-```
 
 #### Task Filters
-```
+
 [Screenshot: Filter Controls]
+![Filter Controls](screenshots/features/filters.png)
 - Location search box
 - Minimum reward slider
 - Maximum reward slider
@@ -271,11 +273,11 @@ NeuraFund is a campus-based gig economy platform that empowers students to earn 
 - Status filter dropdown
 - Clear filters button
 📍 Path to add: /screenshots/filters.png
-```
 
 #### User Profile Card
-```
+
 [Screenshot: User Profile]
+![User Profile](screenshots/features/profile-card.png)
 - Profile picture
 - Full name
 - Role (Student/Vendor)
@@ -283,7 +285,6 @@ NeuraFund is a campus-based gig economy platform that empowers students to earn 
 - Average rating with stars
 - Total ratings count
 📍 Path to add: /screenshots/profile-card.png
-```
 
 ---
 
@@ -402,40 +403,40 @@ Add these sections to highlight key features with screenshots:
 ### ✨ Key Features with Visuals
 
 **Real-Time Task Tracking**
-```
+
 ![Live Tracking](screenshots/features/live-map.png)
 *Real-time GPS tracking with address lookup*
-```
+
 
 **Instant M-Pesa Payments**
-```
+
 ![M-Pesa Integration](screenshots/features/mpesa-deposit.png)
 *Secure payment processing via IntaSend*
-```
+
 
 **Live Chat System**
-```
+
 ![Live Chat](screenshots/student/student-chat.png)
 *Real-time messaging between students and vendors*
-```
+
 
 **Proof Verification**
-```
+
 ![Proof Review](screenshots/vendor/proof-review.png)
 *Photo gallery for task completion verification*
-```
+
 
 **Rating System**
-```
+
 ![Ratings](screenshots/student/rating-modal.png)
 *Rate vendors and build reputation*
-```
+
 
 **Mobile Responsive**
-```
+
 ![Mobile](screenshots/features/mobile-dashboard.png)
 *Fully responsive design for all devices*
-```
+
 
 ---
 
@@ -797,7 +798,7 @@ IntaSend           - Payment provider
 #### 1. Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/neurafund.git
+git clone https://github.com/Sheilatine/FinalProject.git
 cd neurafund
 ```
 
@@ -1481,8 +1482,8 @@ This project is licensed under the MIT License - see LICENSE file for details.
 
 - **Issues:** GitHub Issues
 - **Documentation:** See Documentation/ folder
-- **Email:** support@neurafund.com
-- **WhatsApp:** +254 7XX XXX XXXX
+- **Email:** christinesheila557@gmail.com
+- **WhatsApp:** +254 728 409908
 
 ---
 
