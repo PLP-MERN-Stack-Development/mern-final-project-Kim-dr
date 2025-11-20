@@ -9,7 +9,9 @@ on:
 jobs:
   # JOB 1: TEST BACKEND
   backend-test:
-    runs-on: ubuntu-latest
+    # FIX: We pin this to 'ubuntu-22.04' because the DB tool fails on the newer ubuntu-latest
+    runs-on: ubuntu-22.04
+    
     defaults:
       run:
         working-directory: ./Backend
@@ -23,15 +25,14 @@ jobs:
         node-version: '18.x'
     
     - name: Install Dependencies
-      # FIX 1: Install specific version (v9) to avoid BSON errors with older Mongoose
+      # We stick with the standard install now that we fixed the OS version
       run: |
         npm install
         npm install --save-dev cross-env
-        npm install --save-dev mongodb-memory-server@9.0.0
+        npm install --save-dev mongodb-memory-server
     
     - name: Run Backend Tests
-      # FIX 2: We use 'npx jest' directly to override the 30s timeout with 60s
-      # FIX 3: We removed MONGODB_URI from env so it stops trying to connect to localhost
+      # We keep the timeout increase just to be safe
       run: npx jest --testTimeout=60000 --detectOpenHandles --forceExit
       env:
         INTASEND_PUBLISHABLE_KEY: test_pub_key
@@ -60,6 +61,7 @@ jobs:
       run: npm test
       env:
         CI: true
+
 
   # JOB 3: DEPLOY BACKEND (CD)
   # deploy-backend:
