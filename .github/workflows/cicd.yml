@@ -1,0 +1,67 @@
+name: NeuraFund CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  # JOB 1: TEST BACKEND
+  backend-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./NeuraFund/backend
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+    - name: Install Dependencies
+      run: npm install
+    - name: Run Backend Tests
+      run: npm test
+      env:
+        INTASEND_PUBLISHABLE_KEY: test_pub_key
+        INTASEND_SECRET_KEY: test_secret_key
+        INTASEND_IS_TEST: true
+        JWT_SECRET: test_jwt_secret
+        MONGODB_URI: mongodb://localhost:27017/test_db
+
+  # JOB 2: TEST FRONTEND
+  frontend-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./NeuraFund/frontend
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+    - name: Install Dependencies
+      run: npm install
+    - name: Run Frontend Unit Tests
+      run: npm test
+      env:
+        CI: true
+
+  # JOB 3: DEPLOY BACKEND (CD)
+  # This only runs if the tests pass AND we are on the main branch
+  # deploy-backend:
+  #   needs: [backend-test, frontend-test] # Wait for tests!
+  #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Trigger Render Deployment
+  #       run: curl "${{ secrets.RENDER_DEPLOY_HOOK }}"
+        
+  # JOB 4: FRONTEND DEPLOYMENT NOTE
+  # Vercel handles frontend CD automatically via their GitHub App integration.
+  # It automatically detects that tests passed before promoting to production 
+  # if you configured it in Vercel Dashboard.
