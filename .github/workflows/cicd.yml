@@ -7,37 +7,31 @@ on:
     branches: [ "main", "master" ]
 
 jobs:
-  # JOB 1: TEST BACKEND (With Debugging Mode)
+  # JOB 1: TEST BACKEND
   backend-test:
     runs-on: ubuntu-latest
     
+    # We now know the folder is 'Backend' (Capital B), so we can use defaults again!
+    defaults:
+      run:
+        working-directory: ./Backend
+
     steps:
     - uses: actions/checkout@v3
     
-    # 🔍 DEBUG STEP: This will list all files so we can find the backend folder
-    - name: Debug File Structure
-      run: |
-        echo "--- ROOT DIRECTORY CONTENTS ---"
-        ls -la
-        echo "--- RECURSIVE LIST (Searching for backend...) ---"
-        ls -R
-
     - name: Use Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '18.x'
     
-    # We try to find the folder manually using 'cd'
     - name: Install Dependencies
+      # We add 'npm install cross-env' here to fix the missing tool error
       run: |
-        # Attempt to enter 'Backend' or 'backend'. If both fail, echo error.
-        cd Backend || cd backend || echo "Could not find backend folder"
         npm install
+        npm install --save-dev cross-env 
     
     - name: Run Backend Tests
-      run: |
-        cd Backend || cd backend
-        npm test
+      run: npm test
       env:
         INTASEND_PUBLISHABLE_KEY: test_pub_key
         INTASEND_SECRET_KEY: test_secret_key
@@ -45,7 +39,7 @@ jobs:
         JWT_SECRET: test_jwt_secret
         MONGODB_URI: mongodb://localhost:27017/test_db
 
-  # JOB 2: TEST FRONTEND (Unchanged)
+  # JOB 2: TEST FRONTEND
   frontend-test:
     runs-on: ubuntu-latest
     defaults:
