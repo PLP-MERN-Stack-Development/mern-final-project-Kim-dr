@@ -1,12 +1,16 @@
 import { io } from 'socket.io-client';
 
-const SOCKET_SERVER_URL = 'http://localhost:5001';
+// 🛠️ FIX: Dynamic URL Selection
+// If we are on Vercel, use the Environment Variable. 
+// If we are on a laptop, use localhost.
+// Note: We remove '/api' because socket.io connects to the root, not the API route.
+const BASE_URL = process.env.REACT_APP_API_URL 
+  ? process.env.REACT_APP_API_URL.replace('/api', '') 
+  : 'http://localhost:5001';
 
-// 🛠️ FIX: Set to TRUE. 
-// This creates ONE stable connection that stays alive as you navigate pages.
-const socket = io(SOCKET_SERVER_URL, {
+const socket = io(BASE_URL, {
     autoConnect: true, 
-    reconnection: true,       // Keep trying if internet drops
+    reconnection: true,       
     reconnectionAttempts: 5,
     reconnectionDelay: 1000,
 });

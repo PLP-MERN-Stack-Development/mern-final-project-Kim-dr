@@ -101,11 +101,17 @@ const httpServer = http.createServer(app);
 
 // 2. Attach Socket.IO to the HTTP server
 const io = new Server(httpServer, {
-    cors: {
-        origin: "http://localhost:3000", // Allow your React client
-        methods: ["GET", "POST"]
-    }
+    cors: {
+        // 🛠️ FIX: Allow BOTH your local laptop AND the live Vercel app
+        origin: [
+            "http://localhost:3000", 
+            "https://neura-fund-final.vercel.app"
+        ],
+        methods: ["GET", "POST"],
+        credentials: true
+    }
 });
+
 
 // 3. Define Socket.IO Events and Logic
 io.on('connection', (socket) => {
