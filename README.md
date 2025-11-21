@@ -7,7 +7,7 @@ A full-stack MERN platform connecting university students with local vendors for
 *(Note: The API runs on a free tier and may take up to 60 seconds to wake up)*
 
 **🎥 Demo Videos:** [View Playlist](https://www.loom.com/share/11503be2f976458e80776834913ecc57)  
-**📸 Screenshots:** [View Gallery](./screenshots/README.md)
+
 
 ---
 
