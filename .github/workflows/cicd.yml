@@ -73,10 +73,10 @@ jobs:
 
 
   # JOB 3: DEPLOY BACKEND (CD)
-  # deploy-backend:
-  #   needs: [backend-test, frontend-test]
-  #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Trigger Render Deployment
-  #       run: curl "${{ secrets.RENDER_DEPLOY_HOOK }}"
+  deploy-backend:
+    needs: [backend-test, frontend-test]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Render Deployment
+        run: curl "${{ secrets.RENDER_DEPLOY_HOOK }}"
